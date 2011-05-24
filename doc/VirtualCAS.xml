@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+
+  VirtualCAS.xml     VirtualCAS package documentation
+
+         Copyright (C) 2011, Mohamed Barakat, University of Kaiserslautern
+                            Andreas Steenpaß, University of Kaiserslautern
+-->
+
+<Chapter Label="VirtualRing">
+  
+  <Heading>Virtual Rings</Heading>
+  
+  <Section Label="VirtualRings:Category">
+
+    <Heading>Virtual Rings: Category and Representations</Heading>
+    
+  </Section>
+  
+  <Section Label="VirtualRings:Constructors">
+    
+    <Heading>Virtual Rings: Constructors</Heading>
+
+  </Section>
+
+  <Section Label="VirtualRings:Attributes">
+    
+    <Heading>Virtual Rings: Attributes</Heading>
+    
+  </Section>
+  
+  <Section Label="VirtualRings:Operations">
+    
+    <Heading>Virtual Rings: Operations and Functions</Heading>
+      
+  </Section>
+    
+</Chapter>
