@@ -32,3 +32,7 @@
 
 # constructor methods:
 
+DeclareGlobalFunction( "HomalgFieldOfRationalsInVirtualCAS" );
+
+DeclareGlobalFunction( "HomalgRingOfIntegersInVirtualCAS" );
+
