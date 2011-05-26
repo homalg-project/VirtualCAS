@@ -141,6 +141,17 @@ InstallMethod( String,
         
   Name );
 
+##
+InstallMethod( homalgStream,
+        "for homalg virtual rings",
+        [ IsHomalgVirtualRingRep ],
+        
+  function( S )
+    
+    return homalgStream( UnderlyingNonVirtualRing( S ) );
+    
+end );
+
 ####################################
 #
 # constructor functions and methods:
@@ -221,6 +232,56 @@ InstallGlobalFunction( HomalgFieldOfRationalsInVirtualCAS,
   function( arg )
     
     return VirtualRing( CallFuncList( HomalgFieldOfRationalsInSingular, arg ) );
+    
+end );
+
+##
+InstallMethod( PolynomialRing,
+        "for homalg virtual rings",
+        [ IsHomalgVirtualRingRep, IsList ],
+        
+  function( R, indets )
+    
+    return VirtualRing( PolynomialRing( UnderlyingNonVirtualRing( R ), indets ) );
+    
+end );
+
+##
+InstallMethod( RingOfDerivations,
+        "for homalg virtual rings",
+        [ IsHomalgVirtualRingRep, IsList ],
+        
+  function( R, indets )
+    
+    return VirtualRing( RingOfDerivations( UnderlyingNonVirtualRing( R ), indets ) );
+    
+end );
+
+##
+InstallMethod( ExteriorRing,
+        "for homalg rings",
+        [ IsHomalgVirtualRingRep and IsFreePolynomialRing, IsHomalgRing, IsList ],
+        
+  function( S, R, anti )
+    
+    return VirtualRing( ExteriorRing( UnderlyingNonVirtualRing( S ), R, anti ) );
+    
+end );
+
+##
+InstallMethod( ExteriorRing,
+        "for homalg rings",
+        [ IsHomalgVirtualRingRep and IsFreePolynomialRing, IsHomalgVirtualRingRep, IsList ],
+        
+  function( S, R, anti )
+    local A;
+    
+    A := ExteriorRing( S, UnderlyingNonVirtualRing( R ), anti );
+    
+    ResetFilterObj( A, CoefficientsRing );
+    SetCoefficientsRing( A, R );
+    
+    return A;
     
 end );
 

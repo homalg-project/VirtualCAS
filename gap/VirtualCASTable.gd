@@ -9,4 +9,10 @@
 ##
 #############################################################################
 
+####################################
+#
+# global functions and operations:
+#
+####################################
+
 DeclareGlobalFunction( "CreateHomalgTableForVirtualRings" );
