@@ -1,6 +1,8 @@
 list := [
-         "../gap/VirtualCAS.gd",
-         "../gap/VirtualCAS.gi",
+         "../gap/VirtualRings.gd",
+         "../gap/VirtualRings.gi",
+         "../gap/VirtualMatrices.gd",
+         "../gap/VirtualMatrices.gi",
          "../gap/VirtualCASBasic.gd",
          "../gap/VirtualCASBasic.gi",
          ];

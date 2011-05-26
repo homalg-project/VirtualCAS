@@ -1,4 +1,4 @@
-LoadPackage( "RingsForHomalg" );
+LoadPackage( "VirtualCAS" );
 
 Qxyz := HomalgFieldOfRationalsInVirtualCAS( ) * "x,y,z";
 

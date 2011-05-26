@@ -12,8 +12,11 @@
 ## init
 ReadPackage( "VirtualCAS", "gap/VirtualCASForHomalg.gd" );
 
-## init
-ReadPackage( "VirtualCAS", "gap/VirtualCAS.gd" );
+## virtual rings
+ReadPackage( "VirtualCAS", "gap/VirtualRings.gd" );
+
+## virtual matrices
+ReadPackage( "VirtualCAS", "gap/VirtualMatrices.gd" );
 
 ## the basic matrix operations
 ReadPackage( "VirtualCAS", "gap/VirtualCASBasic.gd" );

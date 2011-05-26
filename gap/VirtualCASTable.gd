@@ -9,4 +9,4 @@
 ##
 #############################################################################
 
-DeclareGlobalFunction( "CreateHomalgTableForVirtualCAS" );
+DeclareGlobalFunction( "CreateHomalgTableForVirtualRings" );

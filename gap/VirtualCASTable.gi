@@ -16,7 +16,7 @@
 ####################################
 
 ##
-InstallGlobalFunction( CreateHomalgTableForVirtualCAS,
+InstallGlobalFunction( CreateHomalgTableForVirtualRings,
   function( R )
     local RP;
     

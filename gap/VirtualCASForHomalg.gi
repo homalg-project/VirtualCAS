@@ -26,6 +26,17 @@ InstallValue( HOMALG_VIRTUAL_CAS,
 ##
 InstallValue( CommonHomalgTableForVirtualRing,
         rec(
+            RingName :=
+              function( S )
+                
+                if HasName( S ) then
+                    return Name( S );
+                fi;
+                
+                return RingName( UnderlyingNonVirtualRing( S ) );
+                
+              end,
+              
          )
 );
 
