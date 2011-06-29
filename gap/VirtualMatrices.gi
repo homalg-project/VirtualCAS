@@ -127,7 +127,7 @@ end );
 ##
 InstallMethod( SetEntryOfHomalgMatrix,
         "for homalg virtual matrices",
-        [ IsHomalgVirtualMatrixRep and IsMutableMatrix, IsInt, IsInt, IsVirtualRingElementRep, IsHomalgVirtualRingRep ],
+        [ IsHomalgVirtualMatrixRep and IsMutable, IsInt, IsInt, IsVirtualRingElementRep, IsHomalgVirtualRingRep ],
         
   function( M, r, c, s, R )
     
@@ -146,7 +146,7 @@ end );
 ##
 InstallMethod( AddToEntryOfHomalgMatrix,
         "for homalg virtual matrices",
-        [ IsHomalgVirtualMatrixRep and IsMutableMatrix, IsInt, IsInt, IsVirtualRingElementRep, IsHomalgVirtualRingRep ],
+        [ IsHomalgVirtualMatrixRep and IsMutable, IsInt, IsInt, IsVirtualRingElementRep, IsHomalgVirtualRingRep ],
         
   function( M, r, c, s, R )
     
@@ -307,9 +307,9 @@ InstallMethod( SetIsMutableMatrix,
   function( A, b )
     
     if b = true then
-      SetFilterObj( A, IsMutableMatrix );
+      SetFilterObj( A, IsMutable );
     else
-      ResetFilterObj( A, IsMutableMatrix );
+      ResetFilterObj( A, IsMutable );
     fi;
     
     SetIsMutableMatrix( UnderlyingMatrix( A ), b );
