@@ -116,47 +116,47 @@ InstallMethod( BlindlyCopyMatrixPropertiesToHomalgVirtualMatrix,	## under constr
     
 end );
 
-##  <#GAPDoc Label="SetEntryOfHomalgMatrix">
+##  <#GAPDoc Label="SetMatElm">
 ##  <ManSection>
-##    <Oper Arg="mat, i, j, r, R" Name="SetEntryOfHomalgMatrix" Label="for homalg virtual matrices"/>
+##    <Oper Arg="mat, i, j, r, R" Name="SetMatElm" Label="for homalg virtual matrices"/>
 ##    <Description>
 ##      Changes the entry (<A>i,j</A>) of the virtual matrix <A>mat</A> to the value <A>r</A>. Here <A>R</A> is the (virtual) &homalg; ring involved in these computations.
 ##    </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-InstallMethod( SetEntryOfHomalgMatrix,
+InstallMethod( SetMatElm,
         "for homalg virtual matrices",
-        [ IsHomalgVirtualMatrixRep and IsMutable, IsInt, IsInt, IsVirtualRingElementRep, IsHomalgVirtualRingRep ],
+        [ IsHomalgVirtualMatrixRep and IsMutable, IsPosInt, IsPosInt, IsVirtualRingElementRep, IsHomalgVirtualRingRep ],
         
   function( M, r, c, s, R )
     
-    SetEntryOfHomalgMatrix( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRingElement( s ), UnderlyingNonVirtualRing( R ) );
+    SetMatElm( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRingElement( s ), UnderlyingNonVirtualRing( R ) );
     
 end );
 
-##  <#GAPDoc Label="AddToEntryOfHomalgMatrix">
+##  <#GAPDoc Label="AddToMatElm">
 ##  <ManSection>
-##    <Oper Arg="mat, i, j, r, R" Name="AddToEntryOfHomalgMatrix" Label="for homalg virtual matrices"/>
+##    <Oper Arg="mat, i, j, r, R" Name="AddToMatElm" Label="for homalg virtual matrices"/>
 ##    <Description>
 ##      Changes the entry (<A>i,j</A>) of the virtual matrix <A>mat</A> by adding the value <A>r</A> to it. Here <A>R</A> is the (virtual) &homalg; ring involved in these computations.
 ##    </Description>
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-InstallMethod( AddToEntryOfHomalgMatrix,
+InstallMethod( AddToMatElm,
         "for homalg virtual matrices",
-        [ IsHomalgVirtualMatrixRep and IsMutable, IsInt, IsInt, IsVirtualRingElementRep, IsHomalgVirtualRingRep ],
+        [ IsHomalgVirtualMatrixRep and IsMutable, IsPosInt, IsPosInt, IsVirtualRingElementRep, IsHomalgVirtualRingRep ],
         
   function( M, r, c, s, R )
     
-    AddToEntryOfHomalgMatrix( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRingElement( s ), UnderlyingNonVirtualRing( R ) );
+    AddToMatElm( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRingElement( s ), UnderlyingNonVirtualRing( R ) );
     
 end );
 
-##  <#GAPDoc Label="GetEntryOfHomalgMatrixAsString">
+##  <#GAPDoc Label="MatElmAsString">
 ##  <ManSection>
-##    <Oper Arg="mat, i, j, R" Name="GetEntryOfHomalgMatrixAsString" Label="for homalg virtual matrices"/>
+##    <Oper Arg="mat, i, j, R" Name="MatElmAsString" Label="for homalg virtual matrices"/>
 ##    <Returns>a string</Returns>
 ##    <Description>
 ##      Returns the entry (<A>i,j</A>) of the virtual matrix <A>mat</A> as a string. Here <A>R</A> is the (virtual) &homalg; ring involved in these computations.
@@ -164,19 +164,19 @@ end );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-InstallMethod( GetEntryOfHomalgMatrixAsString,
+InstallMethod( MatElmAsString,
         "for homalg virtual matrices",
-        [ IsHomalgVirtualMatrixRep, IsInt, IsInt, IsHomalgVirtualRingRep ],
+        [ IsHomalgVirtualMatrixRep, IsPosInt, IsPosInt, IsHomalgVirtualRingRep ],
         
   function( M, r, c, R )
     
-    return GetEntryOfHomalgMatrixAsString( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRing( R ) );
+    return MatElmAsString( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRing( R ) );
     
 end );
 
-##  <#GAPDoc Label="GetEntryOfHomalgMatrix">
+##  <#GAPDoc Label="MatElm">
 ##  <ManSection>
-##    <Oper Arg="mat, i, j, R" Name="GetEntryOfHomalgMatrix" Label="for homalg virtual matrices"/>
+##    <Oper Arg="mat, i, j, R" Name="MatElm" Label="for homalg virtual matrices"/>
 ##    <Returns>a virtual ring element</Returns>
 ##    <Description>
 ##      Returns the entry (<A>i,j</A>) of the virtual matrix <A>mat</A>. Here <A>R</A> is the (virtual) &homalg; ring involved in these computations.
@@ -184,13 +184,13 @@ end );
 ##  </ManSection>
 ##  <#/GAPDoc>
 ##
-InstallMethod( GetEntryOfHomalgMatrix,
+InstallMethod( MatElm,
         "for homalg virtual matrices",
-        [ IsHomalgVirtualMatrixRep, IsInt, IsInt, IsHomalgVirtualRingRep ],
+        [ IsHomalgVirtualMatrixRep, IsPosInt, IsPosInt, IsHomalgVirtualRingRep ],
         
   function( M, r, c, R )
     
-    return VirtualRingElement( GetEntryOfHomalgMatrix( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRing( R ) ), R );
+    return VirtualRingElement( MatElm( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRing( R ) ), R );
     
 end );
 
