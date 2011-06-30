@@ -300,6 +300,17 @@ InstallMethod( \*,
 end );
 
 ##
+InstallMethod( PostMakeImmutable,
+        "for homalg virtual matrices",
+        [ IsHomalgVirtualMatrixRep and HasEval ],
+        
+  function( A )
+    
+    MakeImmutable( UnderlyingMatrix( A ) );
+    
+end );
+
+##
 InstallMethod( SetIsMutableMatrix,
         "for homalg virtual matrices",
         [ IsHomalgVirtualMatrixRep, IsBool ],
