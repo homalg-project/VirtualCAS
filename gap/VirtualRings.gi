@@ -260,26 +260,29 @@ end );
 ##
 InstallMethod( ExteriorRing,
         "for homalg rings",
-        [ IsHomalgVirtualRingRep and IsFreePolynomialRing, IsHomalgRing, IsList ],
+        [ IsHomalgVirtualRingRep and IsFreePolynomialRing, IsHomalgRing, IsHomalgRing, IsList ],
         
-  function( S, R, anti )
+  function( S, Coeff, Base, anti )
     
-    return VirtualRing( ExteriorRing( UnderlyingNonVirtualRing( S ), R, anti ) );
+    return VirtualRing( ExteriorRing( UnderlyingNonVirtualRing( S ), Coeff, Base, anti ) );
     
 end );
 
 ##
 InstallMethod( ExteriorRing,
         "for homalg rings",
-        [ IsHomalgVirtualRingRep and IsFreePolynomialRing, IsHomalgVirtualRingRep, IsList ],
+        [ IsHomalgVirtualRingRep and IsFreePolynomialRing, IsHomalgVirtualRingRep, IsHomalgVirtualRingRep, IsList ],
         
-  function( S, R, anti )
+  function( S, Coeff, Base, anti )
     local A;
     
-    A := ExteriorRing( S, UnderlyingNonVirtualRing( R ), anti );
+    A := ExteriorRing( S, UnderlyingNonVirtualRing( Coeff ), UnderlyingNonVirtualRing( Base ), anti );
     
     ResetFilterObj( A, CoefficientsRing );
-    SetCoefficientsRing( A, R );
+    SetCoefficientsRing( A, Coeff );
+    
+    ResetFilterObj( A, BaseRing );
+    SetCoefficientsRing( A, Base );
     
     return A;
     
