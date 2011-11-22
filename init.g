@@ -12,6 +12,9 @@
 ## init
 ReadPackage( "VirtualCAS", "gap/VirtualCASForHomalg.gd" );
 
+## virtual streams
+ReadPackage( "VirtualCAS", "gap/VirtualCAS.gd" );
+
 ## virtual rings
 ReadPackage( "VirtualCAS", "gap/VirtualRings.gd" );
 

@@ -3,10 +3,10 @@
 <!-- 
 
   title.xml            VirtualCAS package documentation               Mohamed Barakat
-                                                                        Markus Lange-Hegermann
+                                                                     Andreas Steenpaß
 
          Copyright (C) 2011, Mohamed Barakat, University of Kaiserslautern
-                      Markus Lange-Hegermann, RWTH-Aachen University
+                            Andreas Steenpaß, University of Kaiserslautern
 -->
 <TitlePage>
   <Title>&VirtualCAS;</Title>
@@ -28,30 +28,25 @@
     <Email>barakat@mathematik.uni-kl.de</Email>
     <Homepage>http://www.mathematik.uni-kl.de/&tilde;barakat/</Homepage>
   </Author>
-  <Author>Markus Lange-Hegermann<Alt Only="LaTeX"><Br/></Alt>
+  <Author>Andreas Steenpaß<Alt Only="LaTeX"><Br/></Alt>
     <Address>
-      Lehrstuhl B für Mathematik,
-      RWTH Aachen,
-      Templergraben 64,
-      52056 Aachen,
+      Department of Mathematics, <Br/>
+      University of Kaiserslautern, <Br/>
+      67653 Kaiserslautern, <Br/>
       Germany
     </Address>
-    <Email>markus.lange.hegermann@rwth-aachen.de</Email>
-    <Homepage>http://wwwb.math.rwth-aachen.de/~markus</Homepage>
+    <Email>steenpass@mathematik.uni-kl.de</Email>
   </Author>
-  <Date>September 2011</Date>
+  <Date>November 2011</Date>
   
   <Copyright>
-    &copyright; 2011 by Mohamed Barakat and Markus Lange-Hegermann <P/>
+    &copyright; 2011 by Mohamed Barakat and Andreas Steenpaß <P/>
     
     This package may be distributed under the terms and conditions of the
     GNU Public License Version 2.
   </Copyright>
   
 <Acknowledgements>
-  
-  We would like to thank the Aachen forest for being such a nice place
-  for jogging.
   
 </Acknowledgements>
 
