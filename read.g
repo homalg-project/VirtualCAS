@@ -30,3 +30,5 @@ ReadPackage( "VirtualCAS", "gap/VirtualCASTools.gi" );
 ## build the homalgTable
 ReadPackage( "VirtualCAS", "gap/VirtualCASTable.gi" );
 
+## the process graph
+ReadPackage( "VirtualCAS", "gap/ProcessGraph.gi" );

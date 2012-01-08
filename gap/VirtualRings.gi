@@ -427,7 +427,7 @@ InstallMethod( ViewObj,
         
   function( o )
     
-    ViewObj(  UnderlyingNonVirtualRingElement( o ) );
+    ViewObj( UnderlyingNonVirtualRingElement( o ) );
     
 end );
 
@@ -438,6 +438,6 @@ InstallMethod( Display,
         
   function( r )
     
-    Display(  UnderlyingNonVirtualRingElement( r ) );
+    Display( UnderlyingNonVirtualRingElement( r ) );
     
 end );
