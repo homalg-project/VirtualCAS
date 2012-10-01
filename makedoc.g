@@ -19,4 +19,4 @@ MakeGAPDocDoc( "doc", "VirtualCASForHomalg", list, "VirtualCASForHomalg" );
 
 GAPDocManualLab("VirtualCAS");
 
-quit;
+QUIT;
