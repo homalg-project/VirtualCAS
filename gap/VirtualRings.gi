@@ -386,7 +386,7 @@ InstallMethod( \/,  ## this operation is declared in the file HomalgRelations.gd
     
     left := IsHomalgRingRelationsAsGeneratorsOfLeftIdeal( ring_rel );
     
-    mat := UnderlyingMatrix( MatrixOfRelations( ring_rel ) );
+    mat := UnderlyingNonVirtualMatrix( MatrixOfRelations( ring_rel ) );
     
     if left then
         rel := HomalgRingRelationsAsGeneratorsOfLeftIdeal( mat );

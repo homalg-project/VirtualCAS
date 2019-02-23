@@ -31,7 +31,7 @@ Subtitle := "A virtual computer algebra system",
 Version := Maximum( [
   "2011.05.20", ## Andreas' version
 ## this line prevents merge conflicts
-  "2012.09.21", ## Mohamed's version
+  "2012.09.22", ## Mohamed's version
 ] ),
 ##  Please adjust also the VERSION file in the package directory when
 ##  changing this.

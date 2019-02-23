@@ -29,7 +29,7 @@ InstallValue( CommonHomalgTableForVirtualRingBasic,
             BasisOfRowModule :=
               function( M )
                  return HomalgVirtualMatrix(
-                                BasisOfRowModule( UnderlyingMatrix( M ) ),
+                                BasisOfRowModule( UnderlyingNonVirtualMatrix( M ) ),
                                 HomalgRing( M ) );
               end,
             ##  ]]></Listing>
@@ -39,7 +39,7 @@ InstallValue( CommonHomalgTableForVirtualRingBasic,
             
             BasisOfColumnModule :=
               function( M )
-                return HomalgVirtualMatrix( BasisOfColumnModule( UnderlyingMatrix( M ) ), HomalgRing( M ) );
+                return HomalgVirtualMatrix( BasisOfColumnModule( UnderlyingNonVirtualMatrix( M ) ), HomalgRing( M ) );
               end,
             
             BasisOfRowsCoeff :=
@@ -50,7 +50,7 @@ InstallValue( CommonHomalgTableForVirtualRingBasic,
                 
                 TT := HomalgVoidMatrix( UnderlyingNonVirtualRing( S ) );
                 
-                result := BasisOfRowsCoeff( UnderlyingMatrix( M ), TT );
+                result := BasisOfRowsCoeff( UnderlyingNonVirtualMatrix( M ), TT );
                 
                 SetEval( T, TT );
                 
@@ -66,7 +66,7 @@ InstallValue( CommonHomalgTableForVirtualRingBasic,
                 
                 TT := HomalgVoidMatrix( UnderlyingNonVirtualRing( S ) );
                 
-                result := BasisOfColumnsCoeff( UnderlyingMatrix( M ), TT );
+                result := BasisOfColumnsCoeff( UnderlyingNonVirtualMatrix( M ), TT );
                 
                 SetEval( T, TT );
                 
@@ -83,8 +83,8 @@ InstallValue( CommonHomalgTableForVirtualRingBasic,
             DecideZeroRows :=
               function( A, B )
                 return HomalgVirtualMatrix(
-                               DecideZeroRows( UnderlyingMatrix( A ),
-                                       UnderlyingMatrix( B ) ),
+                               DecideZeroRows( UnderlyingNonVirtualMatrix( A ),
+                                       UnderlyingNonVirtualMatrix( B ) ),
                                HomalgRing( A ) );
               end,
             ##  ]]></Listing>
@@ -94,7 +94,7 @@ InstallValue( CommonHomalgTableForVirtualRingBasic,
             
             DecideZeroColumns :=
               function( A, B )
-                return HomalgVirtualMatrix( DecideZeroColumns( UnderlyingMatrix( A ), UnderlyingMatrix( B ) ), HomalgRing( A ) );
+                return HomalgVirtualMatrix( DecideZeroColumns( UnderlyingNonVirtualMatrix( A ), UnderlyingNonVirtualMatrix( B ) ), HomalgRing( A ) );
               end,
             
             DecideZeroRowsEffectively :=
@@ -105,7 +105,7 @@ InstallValue( CommonHomalgTableForVirtualRingBasic,
                 
                 TT := HomalgVoidMatrix( UnderlyingNonVirtualRing( S ) );
                 
-                result := DecideZeroRowsEffectively( UnderlyingMatrix( A ), UnderlyingMatrix( B ), TT );
+                result := DecideZeroRowsEffectively( UnderlyingNonVirtualMatrix( A ), UnderlyingNonVirtualMatrix( B ), TT );
                 
                 SetEval( T, TT );
                 
@@ -121,7 +121,7 @@ InstallValue( CommonHomalgTableForVirtualRingBasic,
                 
                 TT := HomalgVoidMatrix( UnderlyingNonVirtualRing( S ) );
                 
-                result := DecideZeroColumnsEffectively( UnderlyingMatrix( A ), UnderlyingMatrix( B ), TT );
+                result := DecideZeroColumnsEffectively( UnderlyingNonVirtualMatrix( A ), UnderlyingNonVirtualMatrix( B ), TT );
                 
                 SetEval( T, TT );
                 
@@ -138,7 +138,7 @@ InstallValue( CommonHomalgTableForVirtualRingBasic,
             SyzygiesGeneratorsOfRows :=
               function( M )
                 return HomalgVirtualMatrix(
-                               SyzygiesGeneratorsOfRows( UnderlyingMatrix( M ) ),
+                               SyzygiesGeneratorsOfRows( UnderlyingNonVirtualMatrix( M ) ),
                                HomalgRing( M ) );
               end,
             ##  ]]></Listing>
@@ -148,19 +148,19 @@ InstallValue( CommonHomalgTableForVirtualRingBasic,
             
             RelativeSyzygiesGeneratorsOfRows :=
               function( M, N )
-                return HomalgVirtualMatrix( SyzygiesGeneratorsOfRows( UnderlyingMatrix( M ), UnderlyingMatrix( N ) ), HomalgRing( M ) );
+                return HomalgVirtualMatrix( SyzygiesGeneratorsOfRows( UnderlyingNonVirtualMatrix( M ), UnderlyingNonVirtualMatrix( N ) ), HomalgRing( M ) );
               end,
             
             SyzygiesGeneratorsOfColumns :=
               function( M )
                 return HomalgVirtualMatrix(
-                               SyzygiesGeneratorsOfColumns( UnderlyingMatrix( M ) ),
+                               SyzygiesGeneratorsOfColumns( UnderlyingNonVirtualMatrix( M ) ),
                                HomalgRing( M ) );
               end,
             
             RelativeSyzygiesGeneratorsOfColumns :=
               function( M, N )
-                return HomalgVirtualMatrix( SyzygiesGeneratorsOfColumns( UnderlyingMatrix( M ), UnderlyingMatrix( N ) ), HomalgRing( M ) );
+                return HomalgVirtualMatrix( SyzygiesGeneratorsOfColumns( UnderlyingNonVirtualMatrix( M ), UnderlyingNonVirtualMatrix( N ) ), HomalgRing( M ) );
               end,
      )
   );

@@ -73,82 +73,82 @@ InstallValue( CommonHomalgTableForVirtualRingTools,
         
         AreEqualMatrices :=
           function( A, B )
-            return UnderlyingMatrix( A ) = UnderlyingMatrix( B );
+            return UnderlyingNonVirtualMatrix( A ) = UnderlyingNonVirtualMatrix( B );
           end,
         
         Involution :=
           function( M )
-            return Involution( UnderlyingMatrix( M ) );
+            return Involution( UnderlyingNonVirtualMatrix( M ) );
           end,
         
         CertainRows :=
           function( M, plist )
-            return CertainRows( UnderlyingMatrix( M ), plist );
+            return CertainRows( UnderlyingNonVirtualMatrix( M ), plist );
           end,
         
         CertainColumns :=
           function( M, plist )
-            return CertainColumns( UnderlyingMatrix( M ), plist );
+            return CertainColumns( UnderlyingNonVirtualMatrix( M ), plist );
           end,
         
         UnionOfRows :=
           function( A, B )
-            return UnionOfRows( UnderlyingMatrix( A ), UnderlyingMatrix( B ) );
+            return UnionOfRows( UnderlyingNonVirtualMatrix( A ), UnderlyingNonVirtualMatrix( B ) );
           end,
         
         UnionOfColumns :=
           function( A, B )
-            return UnionOfColumns( UnderlyingMatrix( A ), UnderlyingMatrix( B ) );
+            return UnionOfColumns( UnderlyingNonVirtualMatrix( A ), UnderlyingNonVirtualMatrix( B ) );
           end,
         
         DiagMat :=
           function( e )
-            return DiagMat( List( e, UnderlyingMatrix ) );
+            return DiagMat( List( e, UnderlyingNonVirtualMatrix ) );
           end,
         
         KroneckerMat :=
           function( A, B )
-            return KroneckerMat( UnderlyingMatrix( A ), UnderlyingMatrix( B ) );
+            return KroneckerMat( UnderlyingNonVirtualMatrix( A ), UnderlyingNonVirtualMatrix( B ) );
           end,
         
         MulMat :=
           function( a, A )
-            return UnderlyingNonVirtualRingElement( a ) * UnderlyingMatrix( A );
+            return UnderlyingNonVirtualRingElement( a ) * UnderlyingNonVirtualMatrix( A );
           end,
         
         AddMat :=
           function( A, B )
-            return UnderlyingMatrix( A ) + UnderlyingMatrix( B );
+            return UnderlyingNonVirtualMatrix( A ) + UnderlyingNonVirtualMatrix( B );
           end,
         
         SubMat :=
           function( A, B )
-            return UnderlyingMatrix( A ) - UnderlyingMatrix( B );
+            return UnderlyingNonVirtualMatrix( A ) - UnderlyingNonVirtualMatrix( B );
           end,
         
         Compose :=
           function( A, B )
-            return UnderlyingMatrix( A ) * UnderlyingMatrix( B );
+            return UnderlyingNonVirtualMatrix( A ) * UnderlyingNonVirtualMatrix( B );
           end,
         
-        NrRows := C -> NrRows( UnderlyingMatrix( C ) ),
+        NrRows := C -> NrRows( UnderlyingNonVirtualMatrix( C ) ),
         
-        NrColumns := C -> NrColumns( UnderlyingMatrix( C ) ),
+        NrColumns := C -> NrColumns( UnderlyingNonVirtualMatrix( C ) ),
         
-        IsZeroMatrix := M -> IsZero( UnderlyingMatrix( M ) ),
+        IsZeroMatrix := M -> IsZero( UnderlyingNonVirtualMatrix( M ) ),
         
-        IsIdentityMatrix := M -> IsOne( UnderlyingMatrix( M ) ),
+        IsIdentityMatrix := M -> IsOne( UnderlyingNonVirtualMatrix( M ) ),
         
-        IsDiagonalMatrix := M -> IsDiagonalMatrix( UnderlyingMatrix( M ) ),
+        IsDiagonalMatrix := M -> IsDiagonalMatrix( UnderlyingNonVirtualMatrix( M ) ),
         
-        ZeroRows := C -> ZeroRows( UnderlyingMatrix( C ) ),
+        ZeroRows := C -> ZeroRows( UnderlyingNonVirtualMatrix( C ) ),
         
-        ZeroColumns := C -> ZeroColumns( UnderlyingMatrix( C ) ),
+        ZeroColumns := C -> ZeroColumns( UnderlyingNonVirtualMatrix( C ) ),
         
         GetColumnIndependentUnitPositions :=
           function( M, pos_list )
             local pos;
-            pos := GetColumnIndependentUnitPositions( UnderlyingMatrix( M ), pos_list );
+            pos := GetColumnIndependentUnitPositions( UnderlyingNonVirtualMatrix( M ), pos_list );
             if pos <> [ ] then
                 SetIsZero( M, false );
             fi;
@@ -158,7 +158,7 @@ InstallValue( CommonHomalgTableForVirtualRingTools,
         GetRowIndependentUnitPositions :=
           function( M, pos_list )
             local pos;
-            pos := GetRowIndependentUnitPositions( UnderlyingMatrix( M ), pos_list );
+            pos := GetRowIndependentUnitPositions( UnderlyingNonVirtualMatrix( M ), pos_list );
             if pos <> [ ] then
                 SetIsZero( M, false );
             fi;
@@ -167,34 +167,34 @@ InstallValue( CommonHomalgTableForVirtualRingTools,
         
         GetUnitPosition :=
           function( M, pos_list )
-            return GetUnitPosition( UnderlyingMatrix( M ), pos_list );
+            return GetUnitPosition( UnderlyingNonVirtualMatrix( M ), pos_list );
           end,
         
         DivideEntryByUnit :=
           function( M, i, j, u )
-            DivideEntryByUnit( UnderlyingMatrix( M ), i, j, UnderlyingNonVirtualRingElement( u ) );
+            DivideEntryByUnit( UnderlyingNonVirtualMatrix( M ), i, j, UnderlyingNonVirtualRingElement( u ) );
           end,
         
         CopyRowToIdentityMatrix :=
           function( M, i, L, j )
             local l;
-            l := List( L, function( a ) if IsHomalgVirtualMatrixRep( a ) then return UnderlyingMatrix( a ); else return a; fi; end );
-            CopyRowToIdentityMatrix( UnderlyingMatrix( M ), i, l, j );
+            l := List( L, function( a ) if IsHomalgVirtualMatrixRep( a ) then return UnderlyingNonVirtualMatrix( a ); else return a; fi; end );
+            CopyRowToIdentityMatrix( UnderlyingNonVirtualMatrix( M ), i, l, j );
           end,
         
         CopyColumnToIdentityMatrix :=
           function( M, j, L, i )
-            return CopyColumnToIdentityMatrix( UnderlyingMatrix( M ), j, UnderlyingMatrix( L ), i );
+            return CopyColumnToIdentityMatrix( UnderlyingNonVirtualMatrix( M ), j, UnderlyingNonVirtualMatrix( L ), i );
           end,
         
         SetColumnToZero :=
           function( M, i, j )
-            return SetColumnToZero( UnderlyingMatrix( M ), i, j );
+            return SetColumnToZero( UnderlyingNonVirtualMatrix( M ), i, j );
           end,
         
         GetCleanRowsPositions :=
           function( M, clean_columns )
-            return GetCleanRowsPositions(  UnderlyingMatrix( M ), clean_columns );
+            return GetCleanRowsPositions(  UnderlyingNonVirtualMatrix( M ), clean_columns );
           end,
         
      )

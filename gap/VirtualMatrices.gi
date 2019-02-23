@@ -48,7 +48,7 @@ BindGlobal( "TheTypeHomalgVirtualMatrices",
 ####################################
 
 ##
-InstallMethod( UnderlyingMatrix,
+InstallMethod( UnderlyingNonVirtualMatrix,
         "for homalg virtual matrices",
         [ IsHomalgVirtualMatrixRep and IsEmptyMatrix ],
         
@@ -68,7 +68,7 @@ InstallMethod( UnderlyingMatrix,
 end );
 
 ##
-InstallMethod( UnderlyingMatrix,
+InstallMethod( UnderlyingNonVirtualMatrix,
         "for homalg virtual matrices",
         [ IsHomalgVirtualMatrixRep ],
         
@@ -131,7 +131,7 @@ InstallMethod( SetMatElm,
         
   function( M, r, c, s, R )
     
-    SetMatElm( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRingElement( s ), UnderlyingNonVirtualRing( R ) );
+    SetMatElm( UnderlyingNonVirtualMatrix( M ), r, c, UnderlyingNonVirtualRingElement( s ), UnderlyingNonVirtualRing( R ) );
     
 end );
 
@@ -150,7 +150,7 @@ InstallMethod( AddToMatElm,
         
   function( M, r, c, s, R )
     
-    AddToMatElm( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRingElement( s ), UnderlyingNonVirtualRing( R ) );
+    AddToMatElm( UnderlyingNonVirtualMatrix( M ), r, c, UnderlyingNonVirtualRingElement( s ), UnderlyingNonVirtualRing( R ) );
     
 end );
 
@@ -170,7 +170,7 @@ InstallMethod( MatElmAsString,
         
   function( M, r, c, R )
     
-    return MatElmAsString( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRing( R ) );
+    return MatElmAsString( UnderlyingNonVirtualMatrix( M ), r, c, UnderlyingNonVirtualRing( R ) );
     
 end );
 
@@ -190,7 +190,7 @@ InstallMethod( MatElm,
         
   function( M, r, c, R )
     
-    return VirtualRingElement( MatElm( UnderlyingMatrix( M ), r, c, UnderlyingNonVirtualRing( R ) ), R );
+    return VirtualRingElement( MatElm( UnderlyingNonVirtualMatrix( M ), r, c, UnderlyingNonVirtualRing( R ) ), R );
     
 end );
 
@@ -201,7 +201,7 @@ InstallMethod( SaveHomalgMatrixToFile,
         
   function( filename, M, R )
   
-    return SaveHomalgMatrixToFile( filename, UnderlyingMatrix( M ), UnderlyingNonVirtualRing( R ) );
+    return SaveHomalgMatrixToFile( filename, UnderlyingNonVirtualMatrix( M ), UnderlyingNonVirtualRing( R ) );
     
 end );
 
@@ -295,7 +295,7 @@ InstallMethod( \*,
         
   function( R, m )
     
-    return R * UnderlyingMatrix( m );
+    return R * UnderlyingNonVirtualMatrix( m );
     
 end );
 
@@ -306,7 +306,7 @@ InstallMethod( PostMakeImmutable,
         
   function( A )
     
-    MakeImmutable( UnderlyingMatrix( A ) );
+    MakeImmutable( UnderlyingNonVirtualMatrix( A ) );
     
 end );
 
@@ -323,7 +323,7 @@ InstallMethod( SetIsMutableMatrix,
       ResetFilterObj( A, IsMutable );
     fi;
     
-    SetIsMutableMatrix( UnderlyingMatrix( A ), b );
+    SetIsMutableMatrix( UnderlyingNonVirtualMatrix( A ), b );
     
 end );
 
@@ -333,7 +333,7 @@ InstallMethod( SaveHomalgMatrixToFile,
         [ IsString, IsHomalgVirtualMatrixRep ],
   function( filename, M )
     
-    return SaveHomalgMatrixToFile( filename, UnderlyingMatrix( M ) );
+    return SaveHomalgMatrixToFile( filename, UnderlyingNonVirtualMatrix( M ) );
     
 end );
 
@@ -372,7 +372,7 @@ InstallMethod( Display,
         
   function( A )
     
-    Display( UnderlyingMatrix( A ) );
+    Display( UnderlyingNonVirtualMatrix( A ) );
     
 end );
 

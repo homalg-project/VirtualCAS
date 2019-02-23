@@ -40,7 +40,7 @@ DeclareProperty( "Twitter",
 DeclareOperation( "UnderlyingNonVirtualRing",
         [ IsHomalgVirtualMatrix ] );
 
-DeclareOperation( "UnderlyingMatrix",
+DeclareOperation( "UnderlyingNonVirtualMatrix",
         [ IsHomalgVirtualMatrix ] );
 
 # constructor methods:
