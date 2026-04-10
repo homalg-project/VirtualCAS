@@ -27,7 +27,7 @@
 ##  <#/GAPDoc>
 ##
 DeclareRepresentation( "IsHomalgVirtualRingRep",
-        IsHomalgVirtualRing and IsHomalgRingOrFinitelyPresentedModuleRep,
+        IsHomalgVirtualRing and IsHomalgSemiringOrFinitelyPresentedModuleRep,
         [ "ring", "homalgTable" ] );
 
 ##  <#GAPDoc Label="IsVirtualRingElementRep">

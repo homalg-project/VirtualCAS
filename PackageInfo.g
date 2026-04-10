@@ -19,7 +19,7 @@ Subtitle := "A virtual computer algebra system",
 ##  See '?Extending: Version Numbers' in GAP help for an explanation
 ##  of valid version numbers. For an automatic package distribution update
 ##  you must provide a new version number even after small changes.
-Version := "2024.01-01",
+Version := "2026.04-01",
 
 ##  Release date of the current version in dd/mm/yyyy format.
 # 
@@ -248,7 +248,12 @@ Dependencies := rec(
   # list of pairs [package name, (least) version],  package name is case
   # insensitive, least version denoted with '>=' prepended to version string.
   # without these, the package will not load
-  NeededOtherPackages := [ [ "MatricesForHomalg", ">= 2011.09.12" ], [ "HomalgToCAS", ">= 2011.11.25" ], [ "RingsForHomalg", ">= 2011.06.29" ], [ "IO_ForHomalg", ">= 2011.07.25" ], [ "GAPDoc", ">= 1.0" ] ],
+  NeededOtherPackages := [
+                [ "MatricesForHomalg", ">= 2026.04-01" ],
+                [ "HomalgToCAS", ">= 2026.04-01" ],
+                [ "RingsForHomalg", ">= 2011.06.29" ],
+                [ "IO_ForHomalg", ">= 2011.07.25" ],
+                [ "GAPDoc", ">= 1.0" ] ],
   # without these the package will issue a warning while loading
   # SuggestedOtherPackages := [],
   SuggestedOtherPackages := [ ],
